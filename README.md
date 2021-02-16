@@ -1,5 +1,10 @@
 # ffmpeg-docker
 
+## Run ffmpeg with Docker
+
+```sh
+docker run -it -v $(pwd):/workdir jumpaku/ffmpeg-docker bash
+```
 
 ## Run ffmpeg with docker-compose
 
@@ -14,8 +19,17 @@ services:
       - './:/workdir/'
 ```
 
-Execute docker-compose
+```sh
+docker-compose run ffmpeg bash
+```
+
+## Examples of executing ffmpeg
+
 
 ```sh
-docker-compose run ffmpeg ffmpeg -i video-in.mov -preset veryslow video-out.mp4
+ffmpeg -i video-in.mov -preset veryslow video-out.mp4
+```
+
+```sh
+ffmpeg -i video-in.mp4 -crf 20 video-out.mp4
 ```
